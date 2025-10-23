@@ -1,28 +1,25 @@
 import json
 from models.InstituicaoEnsino import InstituicaoEnsino
 
-
 def getInstituicoesEnsino():
-
     instituicoesEnsino = []
 
-    # IE no formato JSON lido do arquivo.
-    with open('data/instituicoesensino.json', 'r') as f:
+    with open('data/instituicoes_pb.json', 'r', encoding='utf-8') as f:
         instituicoesEnsinoJson = json.load(f)
 
-    # Conversão para o objeto de InstituicaoEnsino.
-    for instituicaoEnsinoJson in instituicoesEnsinoJson:
-        ie = InstituicaoEnsino(instituicaoEnsinoJson["codigo"],
-                               instituicaoEnsinoJson["nome"],
-                               instituicaoEnsinoJson["co_uf"],
-                               instituicaoEnsinoJson["co_municipio"],
-                               instituicaoEnsinoJson["qt_mat_bas"],
-                               instituicaoEnsinoJson["qt_mat_prof"],
-                               0,
-                               instituicaoEnsinoJson["qt_mat_esp"])
+    for item in instituicoesEnsinoJson:
+        
+        ie = InstituicaoEnsino(
+            id=item.get("id"),
+            nome=item.get("nome_instituicao"),
+            qt_mat_bas=item.get("quantidade_matriculas_basico"),
+            codigo=item.get("codigo_uf"),
+            nome_uf=item.get("nome_uf"),
+            municipio=item.get("municipio"),
+            mesorregiao=item.get("mesorregiao"),
+            microrregiao=item.get("microrregiao"),
+        )
         instituicoesEnsino.append(ie)
 
+
     return instituicoesEnsino
-
-
-getInstituicoesEnsino()

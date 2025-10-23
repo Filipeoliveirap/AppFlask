@@ -1,3 +1,60 @@
-venv
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Python compiled files
 *.pyc
-**/*.pyc
+*.pyo
+*.pyd
+__pycache__/
+**/__pycache__/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# VSCode / IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Flask / Django / temporary
+instance/
+*.sqlite3
+*.log

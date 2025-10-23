@@ -1,17 +1,27 @@
-class InstituicaoEnsino():
+class InstituicaoEnsino:
 
-    def __init__(self, codigo, nome, co_uf, co_municipio, qt_mat_bas, qt_mat_prof, qt_mat_eja, qt_mat_esp):
-        self.codigo = codigo
+    def __init__(self, nome, qt_mat_bas, codigo, nome_uf, municipio, mesorregiao, microrregiao, id=None):
+        self.id = id
         self.nome = nome
-        self.co_uf = co_uf
-        self.co_municipio = co_municipio
         self.qt_mat_bas = qt_mat_bas
-        self.qt_mat_prof = qt_mat_prof
-        self.qt_mat_eja = qt_mat_eja
-        self.qt_mat_esp = qt_mat_esp
+        self.codigo = codigo
+        self.nome_uf = nome_uf
+        self.municipio = municipio
+        self.mesorregiao = mesorregiao
+        self.microrregiao = microrregiao
+
 
     def __repr__(self):
-        return f'<InstituicaoEnsino {self.codigo}>'
+        return f'<InstituicaoEnsino {self.id} - {self.nome}>'
 
     def to_json(self):
-        return {"codigo": self.codigo, "nome": self.nome}
+        return {
+            "id": self.id,
+            "nome_instituicao": self.nome,
+            "quantidade_matriculas_basico": self.qt_mat_bas,
+            "codigo_uf": self.codigo,
+            "nome_uf": self.nome_uf,
+            "municipio": self.municipio,
+            "mesorregiao": self.mesorregiao,
+            "microrregiao": self.microrregiao
+        }
