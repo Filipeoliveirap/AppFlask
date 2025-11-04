@@ -4,7 +4,6 @@ from models.Usuario import Usuario
 
 usuarios_bp = Blueprint("usuarios", __name__)
 
-
 @usuarios_bp.route("/usuarios", methods=["GET"])
 def read_usuarios():
     usuarios = usuarios_service.list_usuarios()

@@ -12,8 +12,6 @@ def _write_usuarios(usuarios):
     data = [u.__dict__ for u in usuarios]
     write_json(USUARIOS_FILE, data)
 
-# CRUD completo
-
 def list_usuarios():
     return _read_usuarios()
 
