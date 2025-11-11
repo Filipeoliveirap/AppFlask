@@ -1,13 +1,17 @@
 CREATE TABLE IF NOT EXISTS tb_instituicao (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        codigo TEXT NOT NULL,
-        nome TEXT NOT NULL,
-        co_uf INTEGER NOT NULL,
-        co_municipio INTEGER NOT NULL,
-        qt_mat_bas INTEGER NOT NULL,
-        qt_mat_prof INTEGER NOT NULL,
-        qt_mat_esp INTEGER NOT NULL
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo TEXT NOT NULL,
+    nome TEXT NOT NULL,
+    co_uf INTEGER,
+    co_municipio INTEGER,
+    qt_mat_bas INTEGER,
+    qt_mat_inf INTEGER,
+    qt_mat_fund INTEGER,
+    qt_mat_med INTEGER,
+    qt_mat_prof INTEGER,
+    qt_mat_esp INTEGER
 );
+
 
 CREATE TABLE IF NOT EXISTS tb_usuario (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
